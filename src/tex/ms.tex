@@ -1,57 +1,116 @@
-% Define document class
-\documentclass[twocolumn]{aastex631}
+%                                                                 aa.dem
+% AA vers. 9.1, LaTeX class for Astronomy & Astrophysics
+% demonstration file
+%                                                       (c) EDP Sciences
+%-----------------------------------------------------------------------
+%
+%\documentclass[referee]{aa} % for a referee version
+%\documentclass[onecolumn]{aa} % for a paper on 1 column  
+%\documentclass[longauth]{aa} % for the long lists of affiliations
+\documentclass[]{aa} % for the letters
+%\documentclass[bibyear]{aa} % if the references are not structured
+%                              according to the author-year natbib style
+
+%
+%\documentclass{aa}  
+\usepackage{natbib}
+%
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,allcolors=[rgb]{0,0,0.8}}
+
+
 \usepackage{showyourwork}
 
-% Begin!
+\usepackage{graphicx}
+\usepackage{showyourwork}
+
+\usepackage{threeparttable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{txfonts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[options]{hyperref}
+% To add links in your PDF file, use the package "hyperref"
+% with options according to your LaTeX or PDFLaTeX drivers.
+%
 \begin{document}
+   \title{A tilted eclipser around ASASSN-21sa}
 
-% Title
-\title{An open source scientific article}
+   \author{B.C. Ottevanger\inst{1} \and 
+   M.A. Kenworthy\inst{1}
+          }
+   \institute{Leiden Observatory, Leiden University, PO Box 9513, 2300 RA Leiden, The Netherlands \\
+              \email{kenworthy@strw.leidenuniv.nl}
+             }
+             
+   \date{Received \today}
 
-% Author list
-\author{@mkenworthy}
+% \abstract{}{}{}{}{}
+% 5 {} token are mandatory
+ 
+  \abstract
+  % context heading (optional)
+  {}  
+  % {Planets form in disks of gas and dust around stars, and moons are thought to form in circumplanetary disks.
+   %
+   %There are several systems where a disk around a secondary companion transits in front of the primary star, resulting in a complex and long lived light curve.
+   %
+   %Understanding the substructure of these disks provides insight into the moon forming process.}
+  % aims heading (mandatory)
+   {We determine the expected photometric signal for the occultation of background stars by a minor planet in the Oort cloud hosting a Hill sphere ring system.}
+  % methods heading (mandatory)
+   {We estimate the timescales and number of stars affected by a ring system around an Oort cloud minor planet as it orbits the Sun.}
+  % results heading (mandatory)
+   {About 1e2 stars will be undergoing dimming/occultation. We can detect most systems beyond XXX au.
+   %
+   Solid angle subtended by a ring system is independent of distance.
+   %
+   }
+  % conclusions heading (optional), leave it empty if necessary
+   {}
 
-% Abstract with filler text
-\begin{abstract}
-    Lasdfasdf
-    t ac, adipiscing vitae, felis.
-    Curabitur dictum gravida mauris, consectetuer id, vulputate a, magna.
-    Donec vehicula augue eu neque, morbi tristique senectus et netus et.
-    Mauris ut leo, cras viverra metus rhoncus sem, nulla et lectus vestibulum.
-    Phasellus eu tellus sit amet tortor gravida placerat.
-    Integer sapien est, iaculis in, pretium quis, viverra ac, nunc.
-    Praesent eget sem vel leo ultrices bibendum.
-    Aenean faucibus, morbi dolor nulla, malesuada eu, pulvinar at, mollis ac.
-    Curabitur auctor semper nulla donec varius orci eget risus.
-    Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam.
-    Duis eget orci sit amet orci dignissim rutrum.
-\end{abstract}
+   \keywords{giant planet formation --
+               moon formation}
 
-% Main body with filler text
-\section{Introduction}
-\label{sec:intro}
+   \maketitle
+%
+%________________________________________________________________
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
-Curabitur dictum gravida mauris, consectetuer id, vulputate a, magna.
-Donec vehicula augue eu neque, morbi tristique senectus et netus et.
-Mauris ut leo, cras viverra metus rhoncus sem, nulla et lectus vestibulum.
-Phasellus eu tellus sit amet tortor gravida placerat.
-Integer sapien est, iaculis in, pretium quis, viverra ac, nunc.
-Praesent eget sem vel leo ultrices bibendum.
-Aenean faucibus, morbi dolor nulla, malesuada eu, pulvinar at, mollis ac.
-Curabitur auctor semper nulla donec varius orci eget risus.
-Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam.
-Duis eget orci sit amet orci dignissim rutrum.
+\section{Introduction}\label{sec:intro}
 
-Nam dui ligula, fringilla a, euismod sodales, sollici- tudin vel, wisi.
-Morbi auctor lorem non justo, nam lacus libero, pretium at, lobortis vitae.
-Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna.
-Morbi ac orci et nisl hendrerit mollis, suspendisse ut massa, cras nec ante.
-Pellentesque a nulla cum sociis natoque penatibus et magnis dis parturient.
-Aliquam tincidunt urna, nulla ullamcorper vestibulum turpis.
-Pellentesque cursus luctus mauris \citep{Luger2021}.
+Disks and rings of material have been detected orbiting astrophysical objects from super massive black holes down the mass spectrum to minor planets (Charikolo; REF).
 
+% \begin{figure}[hbt]
+% \centering
+%     \includegraphics[width=\columnwidth]{figures/parallaxes.pdf}
+%     \caption{Plot of different parallactic contributions as a function of distance from the Sun.}
+%     \label{fig:parallaxes}
+%     \script{plot_parallaxes.py}
+% \end{figure}
+
+\section{All sky photometric surveys}\label{sec:surveys}
+
+
+\begin{acknowledgements}
+      This work has made use of data taken from ASAS-SN \citep{shappee_man_2014, kochanek_all-sky_2017}, processed and obtained through \url{https://asas-sn.osu.edu/}.
+This research has used the SIMBAD database, operated at CDS, Strasbourg, France \citep{wenger2000}.
+%
+This work has also made use of data from the European Space Agency (ESA) mission {\it Gaia} (\url{https://www.cosmos.esa.int/gaia}), processed by the {\it Gaia} Data Processing and Analysis Consortium (DPAC, \url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}).
+%
+Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the {\it Gaia} Multilateral Agreement. Data taken from tic v8.2 was accessed using the VizieR catalogue access tool, CDS, Strasbourg, France.%(DOI : 10.26093/cds/vizier). 
+%
+The original description of the VizieR service was published in 2000, A\&AS 143, 23 \citep{2000A&AS..143...23O}.
+%
+This publication makes use of VOSA, developed under the Spanish Virtual Observatory (\url{https://svo.cab.inta-csic.es}) project funded by MCIN/AEI/10.13039/501100011033/ through grant PID2020-112949GB-I00.
+%
+VOSA has been partially updated by using funding from the European Union's Horizon 2020 Research and Innovation Programme, under Grant Agreement nº 776403 (EXOPLANETS-A)
+%
+To achieve the scientific results presented in this article we made use of the \emph{Python} programming language\footnote{Python Software Foundation, \url{https://www.python.org/}}, especially the \emph{SciPy} \citep{virtanen2020}, \emph{NumPy} \citep{numpy}, \emph{Matplotlib} \citep{Matplotlib}, \emph{emcee} \citep{foreman-mackey2013}, and \emph{astropy} \citep{astropy_1,astropy_2} packages.
+\end{acknowledgements}
+
+
+\bibliographystyle{aa}
 \bibliography{bib}
 
 \end{document}
+
